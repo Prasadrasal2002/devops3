@@ -1,0 +1,32 @@
+#!/bin/bash
+#date:Wed Nov 27 03:18:42 AM UTC 2024
+
+#variables
+base=/home/devops/project_file/git-dir
+day=10
+depth=1
+run=0
+#check if the directory is present or not
+if [ ! -d $base ]
+then
+	echo "directory is not present in given path: $base"
+	exit 1
+fi
+#create 'archive' folder is not present in given path
+
+if [ ! -d $base/archive ]
+then
+	mkdir $base/archive
+fi
+
+#find the list of files larger than 20mb
+for i in `find $base -maxdepth $depth -type f`
+do
+	if [ $run -eq 0 ]
+	then
+		echo "[$(date "+Y%-%m-%d %H:%M:%S")] archiving $i ==> $base/arcive"
+		gzip $i || exit 1
+		mv $i.gz $base/archive || exit 1
+	fi
+done
+
