@@ -9,6 +9,7 @@ file_path=$dir_path/testing-file
 
 if [ -f $file_path ]
 then
+	git checkout -b  test-branch
 	touch $file_path
 fi
 
@@ -22,7 +23,7 @@ if [ -f $file_path ]
 then
 	echo "untrack status................. "
 	git status
-
+	
 	git add .
 	echo "stage status................... "
 	git status
@@ -32,6 +33,8 @@ then
 	git status
 
 	git config -l
+
+	git push new-origin 
 fi
 
 
