@@ -32,6 +32,8 @@ fi
 	if [ $?=0 ]
 		then
 			git push new-origin test-branch
+			echo "succesfully push"
+			git status
 	fi
 	fi
 			
