@@ -30,6 +30,8 @@ then
 	git commit -m "file is ready for commit"
 	echo "tracked status................. "
 	git status
+
+	git config -l
 fi
 
 
