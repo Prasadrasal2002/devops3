@@ -20,7 +20,8 @@ else
 fi
 if [ -f $file_path ]
 then
-	echo "add"
+	git status
+	echo "untrack status"
 	git add .
 	echo "stage status"
 	git status
@@ -28,6 +29,7 @@ then
 	echo "tracked status"
 	git status
 fi
+
 
 
 
