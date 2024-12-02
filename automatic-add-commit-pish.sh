@@ -20,13 +20,15 @@ else
 fi
 if [ -f $file_path ]
 then
+	echo "untrack status: "
 	git status
-	echo "untrack status"
+
 	git add .
-	echo "stage status"
+	echo "stage status: "
 	git status
+	
 	git commit -m "file is ready for commit"
-	echo "tracked status"
+	echo "tracked status: "
 	git status
 fi
 
